@@ -18,3 +18,6 @@ Project currently supervised by Sergey Fomel.
 
 
 ![advection3d_slice_demo](https://github.com/user-attachments/assets/2bff4f2b-df6d-44eb-99ce-231f56dab208)
+
+
+![shallow_water_demo](https://github.com/user-attachments/assets/b49188e9-4cc7-46f8-a00b-6df8bf696d7b)
