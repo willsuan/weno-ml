@@ -16,7 +16,7 @@ The codebase provides both classical solvers (WENO-JS/Z, ENO3, TVD-minmod, PPM, 
 	•	3D Compressible Euler (Characteristic WENO-Z, HLLC/Rusanov)
 	•	2D Rotating Shallow-Water Equations (f-plane dynamics)
 
-Thank you to Sergey Fomel, the advisor for this project.
+Thank you to Sergey Fomel for supervising this project.
 
 ⸻
 
@@ -32,51 +32,50 @@ q_1 = \tfrac16(-u_{i-1} + 5u_i + 2u_{i+1}),\quad
 q_2 = \tfrac16(2u_i + 5u_{i+1} - u_{i+2}).
 
 Each candidate’s smoothness is quantified by the Jiang–Shu indicators:
-\beta_k = \tfrac{13}{12}(u_{i+k-2} - 2u_{i+k-1} + u_{i+k})^2 + \tfrac14(u_{i+k-2} - 4u_{i+k-1} + 3u_{i+k})^2,
+$\beta_k = \tfrac{13}{12}(u_{i+k-2} - 2u_{i+k-1} + u_{i+k})^2 + \tfrac14(u_{i+k-2} - 4u_{i+k-1} + 3u_{i+k})^2,$
 and the nonlinear weights are:
-\alpha_k = \frac{d_k}{(\epsilon + \beta_k)^p},\qquad
-w_k = \frac{\alpha_k}{\sum_j \alpha_j},
-where d_k are optimal linear weights (for 5th-order accuracy, d_0=0.1,\,d_1=0.6,\,d_2=0.3).
+$\alpha_k = \frac{d_k}{(\epsilon + \beta_k)^p},\qquad$
+$w_k = \frac{\alpha_k}{\sum_j \alpha_j},$
+where $d_k$ are optimal linear weights (for 5th-order accuracy, $d_0=0.1,\,d_1=0.6,\,d_2=0.3$).
 
 The final left-state reconstruction:
-u_{i+\frac12}^- = \sum_{k=0}^2 w_k q_k.
+$$u_{i+\frac12}^- = \sum_{k=0}^2 w_k q_k.$$
 
 WENO-Z Improvement
 
 Borges et al. (2008) proposed a global smoothness sensor
-\tau_5 = |\beta_2 - \beta_0|,\quad
-\alpha_k = d_k \Bigl[1 + \bigl(\tfrac{\tau_5}{\beta_k+\epsilon}\bigr)^p\Bigr],
+$$\tau_5 = |\beta_2 - \beta_0|,\quad$$
+$$\alpha_k = d_k \Bigl[1 + \bigl(\tfrac{\tau_5}{\beta_k+\epsilon}\bigr)^p\Bigr]$$,
 which restores optimal accuracy near critical points and reduces dissipation.
 
 ⸻
 
 ### Machine-Learned Weights
 
-In this project, the nonlinear mapping S_i \mapsto (w_0,w_1,w_2) is replaced by a neural functional:
-(w_0, w_1, w_2, g) = f_\theta(u_{i-2}, u_{i-1}, u_i, u_{i+1}, u_{i+2}),
-where g \in [0,1] is a gating variable interpolating between learned WENO-like behavior and ENO-like limiting:
-u^-{i+\frac12} = (1-g)\sum_k w_k q_k + g\,q{\mathrm{ENO}}.
+In this project, the nonlinear mapping $S_i \mapsto (w_0,w_1,w_2)$ is replaced by a neural functional:
+$$(w_0, w_1, w_2, g) = f_\theta(u_{i-2}, u_{i-1}, u_i, u_{i+1}, u_{i+2})$$,
+where $g \in [0,1]$ is a gating variable interpolating between learned WENO-like behavior and ENO-like limiting:
+$$u^-{i+\frac12} = (1-g)\sum_k w_k q_k + g\,q{\mathrm{ENO}}$$.
 
 The model is trained via robust regression and regularization losses:
-\[
-\mathcal{L} =
+$$\mathcal{L} =
 \mathcal{L}{\text{Huber}} +
 \lambda_Z \|\mathbf{w}-\mathbf{w}{\text{WENO-Z}}\|^2 +
 \lambda_m \,\mathcal{P}_{\text{mono}} +
 \lambda_g \,\mathrm{BCE}(g, \text{edge\flag}),
-\]
-where \mathcal{P}{\text{mono}} penalizes violations of monotonicity, ensuring non-oscillatory reconstructions.
+$$
+where $\mathcal{P}{\text{mono}}$ penalizes violations of monotonicity, ensuring non-oscillatory reconstructions.
 
 ⸻
 
 ### Systems of Conservation Laws
 
-For vector equations \partial_t U + \nabla\cdot F(U) = 0,
+For vector equations $\partial_t U + \nabla\cdot F(U) = 0,$
 WENO reconstruction occurs in characteristic space:
 
-W = L(U_L,U_R)\,U,\qquad
-U = R(U_L,U_R)\,W,
-where L and R are the left/right eigenvector matrices of the flux Jacobian.
+$$W = L(U_L,U_R)\,U,\qquad$$
+$$U = R(U_L,U_R)\,W,$$
+where $L$ and $R$ are the left/right eigenvector matrices of the flux Jacobian.
 Characteristic variables are reconstructed independently, and fluxes are obtained via approximate Riemann solvers such as HLLC or Rusanov.
 
 Time integration uses a third-order TVD Runge–Kutta method.
@@ -136,7 +135,7 @@ The color field shows the transport of smooth and filamentary structures using a
 
 
 Rotating Shallow-Water Dam Break
-Time evolution of the free-surface height h(x,y,t) under rotation on an f-plane.
+Time evolution of the free-surface height $h(x,y,t)$ under rotation on an f-plane.
 A step in initial water depth produces gravity waves and geostrophic adjustment. Computed with a 2D WENO-Z reconstruction and Rusanov flux; color represents normalized height.
 
 ![shallow_water_demo](https://github.com/user-attachments/assets/b49188e9-4cc7-46f8-a00b-6df8bf696d7b)
