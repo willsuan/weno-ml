@@ -26,10 +26,10 @@ Thank you to Sergey Fomel for supervising this project.
 
 The WENO family of schemes (Liu et al. 1994; Jiang & Shu 1996) reconstructs interface values u_{i+\frac12}^\pm using multiple sub-stencils and smoothness-adaptive weights.
 
-For a uniform 1D grid, with a 5-point stencil S_i = \{u_{i-2}, u_{i-1}, u_i, u_{i+1}, u_{i+2}\}, define three third-order polynomials:
-q_0 = \tfrac16(2u_{i-2} - 7u_{i-1} + 11u_i),\quad
-q_1 = \tfrac16(-u_{i-1} + 5u_i + 2u_{i+1}),\quad
-q_2 = \tfrac16(2u_i + 5u_{i+1} - u_{i+2}).
+For a uniform 1D grid, with a 5-point stencil $S_i = \{u_{i-2}, u_{i-1}, u_i, u_{i+1}, u_{i+2}\}$, define three third-order polynomials:
+$$q_0 = \tfrac16(2u_{i-2} - 7u_{i-1} + 11u_i),\quad$$
+$$q_1 = \tfrac16(-u_{i-1} + 5u_i + 2u_{i+1}),\quad$$
+$$q_2 = \tfrac16(2u_i + 5u_{i+1} - u_{i+2}).$$
 
 Each candidate’s smoothness is quantified by the Jiang–Shu indicators:
 $\beta_k = \tfrac{13}{12}(u_{i+k-2} - 2u_{i+k-1} + u_{i+k})^2 + \tfrac14(u_{i+k-2} - 4u_{i+k-1} + 3u_{i+k})^2,$
