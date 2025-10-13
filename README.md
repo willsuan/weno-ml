@@ -107,6 +107,7 @@ It extends the philosophy of physics-informed machine learning (PINNs, operator 
 ⸻
 
 References
+
 	1.	Liu, X.-D., Osher, S., & Chan, T. (1994). Weighted Essentially Non-Oscillatory Schemes. Journal of Computational Physics, 115, 200–212.
 	
 	2.	Jiang, G.-S., & Shu, C.-W. (1996). Efficient Implementation of Weighted ENO Schemes. Journal of Computational Physics, 126, 202–228.
