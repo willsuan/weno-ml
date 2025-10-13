@@ -138,14 +138,18 @@ Next steps:
 
 
 3D Linear Advection — Central Slice Evolution
+
 A central x-slice of a passive scalar field advected with constant velocity.
+
 The color field shows the transport of smooth and filamentary structures using a fifth-order WENO-Z scheme and TVD-RK3 time integration. Periodic boundaries preserve spectral features without diffusion.
 
 ![advection3d_slice_demo](https://github.com/user-attachments/assets/2bff4f2b-df6d-44eb-99ce-231f56dab208)
 
 
 Rotating Shallow-Water Dam Break
+
 Time evolution of the free-surface height $h(x,y,t)$ under rotation on an f-plane.
+
 A step in initial water depth produces gravity waves and geostrophic adjustment. Computed with a 2D WENO-Z reconstruction and Rusanov flux; color represents normalized height.
 
 ![shallow_water_demo](https://github.com/user-attachments/assets/b49188e9-4cc7-46f8-a00b-6df8bf696d7b)
