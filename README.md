@@ -108,14 +108,23 @@ It extends the philosophy of physics-informed machine learning (PINNs, operator 
 
 References
 	1.	Liu, X.-D., Osher, S., & Chan, T. (1994). Weighted Essentially Non-Oscillatory Schemes. Journal of Computational Physics, 115, 200–212.
+	
 	2.	Jiang, G.-S., & Shu, C.-W. (1996). Efficient Implementation of Weighted ENO Schemes. Journal of Computational Physics, 126, 202–228.
+	
 	3.	Borges, R., Carmona, M., Costa, B., & Don, W. S. (2008). An Improved Weighted Essentially Non-Oscillatory Scheme for Hyperbolic Conservation Laws. Journal of Computational Physics, 227, 3191–3211.
+	
 	4.	Shu, C.-W. (2009). High Order Weighted Essentially Non-Oscillatory Schemes for Convection Dominated Problems. SIAM Review, 51, 82–126.
+	
 	5.	Toro, E. F. (2009). Riemann Solvers and Numerical Methods for Fluid Dynamics (3rd ed.). Springer.
+	
 	6.	Godunov, S. K. (1959). A Difference Scheme for Numerical Solution of Discontinuous Solution of Hydrodynamic Equations. Matematicheskii Sbornik, 47, 271–306.
+	
 	7.	van Leer, B. (1977). Towards the Ultimate Conservative Difference Scheme. IV. A New Approach to Numerical Convection. Journal of Computational Physics, 23, 276–299.
+	
 	8.	LeVeque, R. J. (2002). Finite Volume Methods for Hyperbolic Problems. Cambridge University Press.
+	
 	9.	Zhang, X., & Shu, C.-W. (2010). On Positivity-Preserving High Order Discontinuous Galerkin Schemes for Compressible Euler Equations. Journal of Computational Physics, 229, 8918–8934.
+	
 	10.	Mishra, S., & Ray, D. (2020). Physics-Informed Machine Learning for PDEs: Concepts, Algorithms, and Applications. Acta Numerica, 29, 1–131.
 
 ⸻
