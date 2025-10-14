@@ -2,7 +2,7 @@
 
 ## Overview
 
-The WENO-ML project develops a machine-learning framework to learn optimal nonlinear reconstruction weights for high-order finite-volume and finite-difference solvers of nonlinear PDEs that exhibit smooth and discontinuous features—such as shocks, contacts, and filaments.
+The WENO-ML project develops a machine-learning framework to learn optimal nonlinear reconstruction weights for high-order finite-volume and finite-difference solvers of nonlinear PDEs that exhibit smooth and discontinuous features—such as shocks, contacts, and filaments. 
 
 It unites the analytical rigor of Weighted Essentially Non-Oscillatory (WENO) schemes with modern data-driven regression, aiming for:
 	•	Spectral-like accuracy in smooth regions,
@@ -16,7 +16,7 @@ The codebase provides both classical solvers (WENO-JS/Z, ENO3, TVD-minmod, PPM, 
 	•	3D Compressible Euler (Characteristic WENO-Z, HLLC/Rusanov)
 	•	2D Rotating Shallow-Water Equations (f-plane dynamics)
 
-Thank you to Sergey Fomel for supervising this project.
+The project is ongoing. Thank you to Sergey Fomel for your supervision.
 
 ⸻
 
