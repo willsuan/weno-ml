@@ -16,7 +16,7 @@ The codebase provides both classical solvers (WENO-JS/Z, ENO3, TVD-minmod, PPM, 
 	•	3D Compressible Euler (Characteristic WENO-Z, HLLC/Rusanov)
 	•	2D Rotating Shallow-Water Equations (f-plane dynamics)
 
-The project is ongoing. Thank you to Sergey Fomel for your supervision.
+The project is ongoing. Thank you to Sergey Fomel for his supervision.
 
 ⸻
 
@@ -24,7 +24,7 @@ The project is ongoing. Thank you to Sergey Fomel for your supervision.
 
 ### Weighted Essentially Non-Oscillatory (WENO) Reconstruction
 
-The WENO family of schemes (Liu et al. 1994; Jiang & Shu 1996) reconstructs interface values u_{i+\frac12}^\pm using multiple sub-stencils and smoothness-adaptive weights.
+The WENO family of schemes (Liu et al. 1994; Jiang & Shu 1996) reconstructs interface values $u_{i+\frac12}^\pm$ using multiple sub-stencils and smoothness-adaptive weights.
 
 For a uniform 1D grid, with a 5-point stencil $S_i = \{u_{i-2}, u_{i-1}, u_i, u_{i+1}, u_{i+2}\}$, define three third-order polynomials:
 $$q_0 = \tfrac16(2u_{i-2} - 7u_{i-1} + 11u_i),\quad$$
