@@ -125,9 +125,7 @@ References
 8.	LeVeque, R. J. (2002). Finite Volume Methods for Hyperbolic Problems. Cambridge University Press.
 	
 9.	Zhang, X., & Shu, C.-W. (2010). On Positivity-Preserving High Order Discontinuous Galerkin Schemes for Compressible Euler Equations. Journal of Computational Physics, 229, 8918–8934.
-	
-10.	Mishra, S., & Ray, D. (2020). Physics-Informed Machine Learning for PDEs: Concepts, Algorithms, and Applications. Acta Numerica, 29, 1–131.
-
+    
 ⸻
 
 Next steps:
